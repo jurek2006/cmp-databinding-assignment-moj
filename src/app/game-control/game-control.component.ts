@@ -11,6 +11,8 @@ export class GameControlComponent implements OnInit {
 	@Output() gameStarted = new EventEmitter();
 	@Output() gameStopped = new EventEmitter();
 	interval; //variable for setInterval
+	startButtonDisabled: boolean = false;
+	stopButtonDisabled: boolean = true;
 
   constructor() { }
 
@@ -23,6 +25,8 @@ export class GameControlComponent implements OnInit {
   	this.interval = setInterval(() =>{
   		this.gameStarted.emit();
   	}, 1000);
+  	this.stopButtonDisabled = false;
+  	this.startButtonDisabled = true;
   };
 
   onStop(){
@@ -30,6 +34,8 @@ export class GameControlComponent implements OnInit {
   	// emitowanie eventu
   	clearInterval(this.interval);
   	// this.gameStopped.emit();
+  	this.stopButtonDisabled = true;
+  	this.startButtonDisabled = false;
   };
 
 }
