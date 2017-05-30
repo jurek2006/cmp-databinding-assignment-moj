@@ -6,4 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
+	odds: number = 1;
+	evens: number = 1;
+
+	onGameStarted(){
+		this.odds++;
+	}
+
+	onGameStopped(){
+		this.evens++;
+	}
 }

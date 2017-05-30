@@ -14,4 +14,17 @@
       </ol>
     </div>
   </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <app-game-control
+        (gameStarted) = "onGameStarted()"
+        (gameStopped) = "onGameStopped()"
+      >
+      </app-game-control>
+    </div>
+    <div class="row">
+      <div class="col-xs-6"> <app-odd [odds] = "odds"></app-odd> </div>
+      <div class="col-xs-6"><app-even  [evens] = "evens"></app-even></div>
+    </div>
+  </div>
 </div>
