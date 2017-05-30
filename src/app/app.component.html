@@ -23,8 +23,22 @@
       </app-game-control>
     </div>
     <div class="row">
-      <div class="col-xs-6"> <app-odd [odds] = "odds"></app-odd> </div>
-      <div class="col-xs-6"><app-even  [evens] = "evens"></app-even></div>
+      <div class="col-xs-6"> 
+        <ul class="list-group">
+          <app-odd 
+            *ngFor = "let odd of odds"
+            [odd] = "odd"
+          ></app-odd> 
+        </ul>
+      </div>
+      <div class="col-xs-6">
+        <ul class="list-group">
+          <app-even  
+            *ngFor = "let even of evens"
+            [even] = "even"
+          ></app-even>
+        </ul>
+      </div>
     </div>
   </div>
 </div>

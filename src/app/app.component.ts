@@ -7,14 +7,21 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-	odds: number = 1;
-	evens: number = 1;
+	currentNumber: number = 0;
+	odds: number[] = [];
+	evens: number[] = [];
 
 	onGameStarted(){
-		this.odds++;
+		this.currentNumber++;
+		if(this.currentNumber % 2 === 0){
+			this.evens.push(this.currentNumber);
+		}
+		else{
+			this.odds.push(this.currentNumber);
+		}
 	}
 
 	onGameStopped(){
-		this.evens++;
+		// this.evens++;
 	}
 }
